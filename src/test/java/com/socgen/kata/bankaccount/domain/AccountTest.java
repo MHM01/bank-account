@@ -2,6 +2,8 @@ package com.socgen.kata.bankaccount.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.time.Clock;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,7 +16,7 @@ public class AccountTest {
 
 	@BeforeEach
 	public void init() {
-		account = new Account();
+		account = new Account(Clock.systemDefaultZone());
 
 	}
 
