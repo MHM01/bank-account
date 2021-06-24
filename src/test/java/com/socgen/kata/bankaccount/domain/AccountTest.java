@@ -42,5 +42,22 @@ public class AccountTest {
 		final Balance expectedBalance = new Balance(0L);
 		assertEquals(expectedBalance, actualBalance);
 	}
+	
+	@Test
+	public void test_withDraw_of_1000CENTS_nominal_case() {
+		account.deposit(new Amount(2000L));
+		account.withdraw(new Amount(1000L));
+		final Balance expectedBalance = new Balance(1000L);
+		assertEquals(expectedBalance, account.getBalance());
+	}
+
+	@Test
+	public void test_withDraw_of_2000CENTS_AND_1000CENTS_nominal_case() {
+		account.deposit(new Amount(5000L));
+		account.withdraw(new Amount(1000L));
+		account.withdraw(new Amount(2000L));
+		final Balance expectedBalance = new Balance(2000L);
+		assertEquals(expectedBalance, account.getBalance());
+	}
 
 }

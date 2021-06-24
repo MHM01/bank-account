@@ -32,6 +32,13 @@ public class Account {
 		addToHistory(EOperationType.DEPOSIT, clock.instant(), amount, balance);
 	}
 	
+	/**
+	 * @param amount
+	 */
+	public void withdraw(Amount amount) {
+		throw new UnsupportedOperationException("This operation isn't implemented yet");
+	}
+	
 	
 	/**
 	 * @param operationType
