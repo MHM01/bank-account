@@ -3,6 +3,8 @@ package com.socgen.kata.bankaccount.domain;
 import java.time.Clock;
 import java.time.Instant;
 
+import com.socgen.kata.bankaccount.domain.port.StatementHistoryPrinter;
+
 
 /**
  * @author mohamedmassmoudi
@@ -38,6 +40,13 @@ public class Account {
 	public void withdraw(Amount amount) {
 		balance = balance.update(EOperationType.WITHDRAWAL, amount);
 		addToHistory(EOperationType.WITHDRAWAL, clock.instant(), amount, balance);
+	}
+	
+	/**
+	 * @param statementHistoryPrinter
+	 */
+	public void printHistory(StatementHistoryPrinter statementHistoryPrinter) {
+		throw new UnsupportedOperationException("This operation isn't implemented yet"); 
 	}
 	
 	
