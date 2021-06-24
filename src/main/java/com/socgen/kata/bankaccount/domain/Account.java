@@ -36,7 +36,7 @@ public class Account {
 	 * @param amount
 	 */
 	public void withdraw(Amount amount) {
-		throw new UnsupportedOperationException("This operation isn't implemented yet");
+		balance = balance.update(EOperationType.WITHDRAWAL, amount);
 	}
 	
 	
