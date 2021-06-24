@@ -46,7 +46,7 @@ public class Account {
 	 * @param statementHistoryPrinter
 	 */
 	public void printHistory(StatementHistoryPrinter statementHistoryPrinter) {
-		throw new UnsupportedOperationException("This operation isn't implemented yet"); 
+		history.print(statementHistoryPrinter);
 	}
 	
 	

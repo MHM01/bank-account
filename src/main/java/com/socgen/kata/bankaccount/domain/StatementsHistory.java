@@ -4,6 +4,8 @@ import java.time.Instant;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.socgen.kata.bankaccount.domain.port.StatementHistoryPrinter;
+
 /**
  * @author mohamedmassmoudi
  *
@@ -22,4 +24,10 @@ public class StatementsHistory {
 		this.entries.add(new StatementHistoryEntry(operationType, operationDate, amount, balance));
 	}
 
+	/**
+	 * @param StatementHistoryPrinter
+	 */
+	void print(StatementHistoryPrinter statementHistoryPrinter) {
+		entries.stream().forEach(e -> statementHistoryPrinter.print(e));
+	}
 }
