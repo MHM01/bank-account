@@ -12,7 +12,7 @@ public class Account {
 	 * @param amount
 	 */
 	public void deposit(Amount amount) {
-		throw new UnsupportedOperationException("This operation isn't implemented yet");
+		balance = balance.update(EOperationType.DEPOSIT, amount);
 	}
 	
 	/**
